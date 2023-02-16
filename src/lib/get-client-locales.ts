@@ -46,9 +46,9 @@ export function getClientLocales(requestOrHeaders: Request | Headers): Locales {
  * If it's a Headers returns the object directly.
  */
 function getHeaders(requestOrHeaders: Request | Headers): Headers {
-  if (requestOrHeaders instanceof Request) {
-    return requestOrHeaders.headers;
+  if (requestOrHeaders instanceof Headers) {
+    return requestOrHeaders;
   }
 
-  return requestOrHeaders;
+  return requestOrHeaders.headers;
 }
